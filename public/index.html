@@ -14,7 +14,7 @@
                 <div class="header-wrapper" id="header-id">
                     <div class="navbar">
                         <span aria-label="Manteca Logo" role="img" class="logo"></span>
-                        <div class="hamburger-section" id="hamburger-id" onclick="activeMenu()">
+                        <div class="hamburger" id="hamburger-id" onclick="activeMenu()">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -22,25 +22,40 @@
                     </div>
                     <div class="menu-wrapper" id="menu-id">
                         <ul>
+                            <li onclick="openSection('hero-id')">Home</li>
                             <li>Reservas</li>
-                            <li>Menú</li>
-                            <li>Contacto</li>
-                            <li>Instagram</li>
+                            <li onclick="openSection('menu-resto-id')">Menú</li>
+                            <li onclick="openSection('contact-id')">Contacto</li>
+                            <li>
+                                <a href="https://www.instagram.com/manteca.resto/" target="_blank">
+                                    Instagram
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="hero">
-                    <h2 class="bold">Lorem <b class="bold">ipsum dolor</b> sit amet</h2>
-                    <p class="hero-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur vitae velit quis augue hendrerit posuere.
-                        Maecenas consectetur leo id quam porta porta.
-                    </p>
-                    <button class="primary-btn">
-                        <span>
-                            Hacer una reserva
-                        </span>
-                    </button>
+                <div id="left-section-id" class="home-container">
+                    <div id="hero-id" class="hero active">
+                        <h2 class="bold">Lorem <b class="bold">ipsum dolor</b> sit amet</h2>
+                        <p class="hero-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Curabitur vitae velit quis augue hendrerit posuere.
+                            Maecenas consectetur leo id quam porta porta.
+                        </p>
+                        <button class="primary-btn">
+                            <span>
+                                Hacer una reserva
+                            </span>
+                        </button>
+                    </div>
+
+                    <div id="menu-resto-id" class="menu-resto">
+                        s
+                    </div>
+                    
+                    <div id="contact-id" class="contact-wrapper">
+                        2
+                    </div>
                 </div>
             </div>
         </div>

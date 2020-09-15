@@ -1,4 +1,4 @@
-function activeMenu () {
+function activeMenu() {
     let el = document.getElementById("header-id");
     if (el.classList.contains("active")) {
         el.classList.remove("active");
@@ -7,3 +7,8 @@ function activeMenu () {
         el.classList.add("active");
     }
 };
+
+function openSection(section) {
+    document.querySelectorAll('.active').forEach(e => e.classList.remove("active"));
+    document.getElementById(section).classList.add("active");
+}

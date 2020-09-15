@@ -47,16 +47,22 @@ body .primary-btn:hover {
   border: 2px solid transparent;
 }
 body .wrapper {
-  display: flex;
   position: relative;
-  padding-left: 60%;
 }
-body .wrapper .left-section {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 60%;
+@media (min-width: 1024px) {
+  body .wrapper {
+    display: flex;
+    padding-left: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  body .wrapper .left-section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 60%;
+  }
 }
 body .wrapper .left-section-container {
   height: 100%;
@@ -113,6 +119,10 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li {
   transition: all 0.3s linear;
   opacity: 0.7;
 }
+body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li a {
+  text-decoration: none;
+  color: inherit;
+}
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li::after {
   content: "";
   position: absolute;
@@ -131,7 +141,7 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover 
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover::after {
   width: 100%;
 }
-body .wrapper .left-section-container .header-wrapper .hamburger-section {
+body .wrapper .left-section-container .header-wrapper .hamburger {
   position: relative;
   width: 24px;
   row-gap: 3px;
@@ -139,33 +149,33 @@ body .wrapper .left-section-container .header-wrapper .hamburger-section {
   grid-template-rows: repeat(2, 2px);
   cursor: pointer;
 }
-body .wrapper .left-section-container .header-wrapper .hamburger-section span {
+body .wrapper .left-section-container .header-wrapper .hamburger span {
   height: 2px;
   background: #333;
   transition: all 0.2s linear;
   width: 100%;
   border-radius: 2px;
 }
-body .wrapper .left-section-container .header-wrapper .hamburger-section span:nth-child(1) {
+body .wrapper .left-section-container .header-wrapper .hamburger span:nth-child(1) {
   width: 13px;
 }
-body .wrapper .left-section-container .header-wrapper .hamburger-section span:nth-child(3) {
+body .wrapper .left-section-container .header-wrapper .hamburger span:nth-child(3) {
   width: 18px;
 }
-body .wrapper .left-section-container .header-wrapper .hamburger-section:hover span {
+body .wrapper .left-section-container .header-wrapper .hamburger:hover span {
   width: 100%;
 }
-body .wrapper .left-section-container .header-wrapper.active .hamburger-section span {
+body .wrapper .left-section-container .header-wrapper.active .hamburger span {
   background: #FFFFFF;
 }
-body .wrapper .left-section-container .header-wrapper.active .hamburger-section span:nth-child(1) {
+body .wrapper .left-section-container .header-wrapper.active .hamburger span:nth-child(1) {
   width: 13px;
   transform: rotate(45deg) translateX(2px);
 }
-body .wrapper .left-section-container .header-wrapper.active .hamburger-section span:nth-child(2) {
+body .wrapper .left-section-container .header-wrapper.active .hamburger span:nth-child(2) {
   transform: rotate(-45deg);
 }
-body .wrapper .left-section-container .header-wrapper.active .hamburger-section span:nth-child(3) {
+body .wrapper .left-section-container .header-wrapper.active .hamburger span:nth-child(3) {
   width: 13px;
   transform: translate(9px, -1px) rotate(45deg);
 }
@@ -176,7 +186,7 @@ body .wrapper .left-section-container .header-wrapper.active .menu-wrapper {
   opacity: 1;
   pointer-events: auto;
 }
-body .wrapper .left-section-container .hero {
+body .wrapper .left-section-container .home-container {
   height: 100%;
   padding-left: 97px;
   display: flex;
@@ -184,7 +194,14 @@ body .wrapper .left-section-container .hero {
   justify-content: flex-end;
   padding-bottom: 150px;
 }
-body .wrapper .left-section-container .hero h2 {
+body .wrapper .left-section-container .home-container > div {
+  display: none;
+}
+body .wrapper .left-section-container .home-container > div.active {
+  display: flex;
+  flex-direction: column;
+}
+body .wrapper .left-section-container .home-container .hero h2 {
   font-size: 56px;
   line-height: 50px;
   color: #333;
@@ -192,10 +209,10 @@ body .wrapper .left-section-container .hero h2 {
   margin-bottom: 22px;
   max-width: 478px;
 }
-body .wrapper .left-section-container .hero h2 b {
+body .wrapper .left-section-container .home-container .hero h2 b {
   color: #ea6515;
 }
-body .wrapper .left-section-container .hero-description {
+body .wrapper .left-section-container .home-container .hero-description {
   max-width: 478px;
   color: #333;
   font-size: 18px;
@@ -204,16 +221,23 @@ body .wrapper .left-section-container .hero-description {
   margin: 0;
   margin-bottom: 40px;
 }
-body .wrapper .left-section-container .hero button {
+body .wrapper .left-section-container .home-container .hero button {
   max-width: 175px;
 }
+body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
+  display: none;
+}
 body .wrapper .right-section {
-  width: 40%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  min-height: 100vh;
   background: #333;
+}
+@media (min-width: 1024px) {
+  body .wrapper .right-section {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
