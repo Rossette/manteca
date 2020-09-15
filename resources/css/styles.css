@@ -111,6 +111,7 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li {
   position: relative;
   width: max-content;
   transition: all 0.3s linear;
+  opacity: 0.7;
 }
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li::after {
   content: "";
@@ -124,7 +125,7 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li::after
   transition: all 0.3s linear;
 }
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover {
-  opacity: 0.7;
+  opacity: 1;
   transform: translateX(10px);
 }
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover::after {

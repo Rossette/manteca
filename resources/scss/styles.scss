@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 @import "fonts";
 
 * {
@@ -112,6 +112,7 @@ body {
                                 position: relative;
                                 width: max-content;
                                 transition: all 0.3s linear;
+                                opacity: 0.7;
 
                                 &::after {
                                     content: "";
@@ -126,7 +127,7 @@ body {
                                 }
                                 
                                 &:hover {
-                                    opacity: 0.7;
+                                    opacity: 1;
                                     transform: translateX(10px);
                                     &::after {
                                         width: 100%;
