@@ -29,13 +29,19 @@ body .primary-btn {
   border: 2px solid #ea6515;
   border-radius: 30px;
   color: #ea6515;
-  font-size: 16px;
+  font-size: 14px;
+  padding: 10px;
   letter-spacing: 0.2px;
-  padding: 15px 20px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s linear;
+}
+@media (min-width: 768px) {
+  body .primary-btn {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
 }
 body .primary-btn span {
   z-index: 2;
@@ -49,18 +55,20 @@ body .primary-btn:hover {
 body .wrapper {
   position: relative;
 }
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   body .wrapper {
     display: flex;
     padding-left: 60%;
   }
 }
-@media (min-width: 1024px) {
+body .wrapper .left-section {
+  height: 100vh;
+}
+@media (min-width: 992px) {
   body .wrapper .left-section {
     position: fixed;
     left: 0;
     top: 0;
-    height: 100vh;
     width: 60%;
   }
 }
@@ -76,8 +84,13 @@ body .wrapper .left-section-container .header-wrapper .navbar {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 58px 74px 0 97px;
+  padding: 30px;
   z-index: 4;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .header-wrapper .navbar {
+    padding: 60px 74px 0 97px;
+  }
 }
 body .wrapper .left-section-container .header-wrapper .navbar .logo {
   mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
@@ -85,7 +98,7 @@ body .wrapper .left-section-container .header-wrapper .navbar .logo {
   width: 100px;
   height: 14px;
   display: inline-block;
-  background-color: #333;
+  background-color: #333333;
 }
 body .wrapper .left-section-container .header-wrapper .menu-wrapper {
   height: 100vh;
@@ -94,7 +107,7 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper {
   left: 0;
   width: 100%;
   z-index: 3;
-  background: #333;
+  background: #1B1C1E;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +164,7 @@ body .wrapper .left-section-container .header-wrapper .hamburger {
 }
 body .wrapper .left-section-container .header-wrapper .hamburger span {
   height: 2px;
-  background: #333;
+  background: #333333;
   transition: all 0.2s linear;
   width: 100%;
   border-radius: 2px;
@@ -188,11 +201,16 @@ body .wrapper .left-section-container .header-wrapper.active .menu-wrapper {
 }
 body .wrapper .left-section-container .home-container {
   height: 100%;
-  padding-left: 97px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 150px;
+  padding: 0 30px;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .home-container {
+    padding: 0;
+    padding-left: 97px;
+  }
 }
 body .wrapper .left-section-container .home-container > div {
   display: none;
@@ -201,43 +219,73 @@ body .wrapper .left-section-container .home-container > div.active {
   display: flex;
   flex-direction: column;
 }
+body .wrapper .left-section-container .home-container .hero {
+  padding-bottom: 60px;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .home-container .hero {
+    padding-bottom: 150px;
+  }
+}
 body .wrapper .left-section-container .home-container .hero h2 {
-  font-size: 56px;
-  line-height: 50px;
-  color: #333;
+  font-size: 32px;
+  line-height: 30px;
+  color: #333333;
   letter-spacing: -2px;
   margin-bottom: 22px;
-  max-width: 478px;
+  max-width: 250px;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .home-container .hero h2 {
+    font-size: 56px;
+    line-height: 50px;
+    max-width: 478px;
+  }
 }
 body .wrapper .left-section-container .home-container .hero h2 b {
   color: #ea6515;
 }
 body .wrapper .left-section-container .home-container .hero-description {
-  max-width: 478px;
-  color: #333;
-  font-size: 18px;
-  line-height: 24px;
+  color: #333333;
+  font-size: 14px;
+  line-height: 20px;
   opacity: 0.8;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  max-width: 478px;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .home-container .hero-description {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
 }
 body .wrapper .left-section-container .home-container .hero button {
   max-width: 175px;
 }
 body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
+  border: 2px solid red;
   display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 body .wrapper .right-section {
-  width: 40%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  min-height: 100vh;
   background: #F0F0F0;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+}
+@media (min-width: 992px) {
+  body .wrapper .right-section {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+  }
 }
 body .wrapper .right-section .photo-container {
   display: flex;
