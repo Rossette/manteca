@@ -21,6 +21,14 @@ body {
         text-transform: uppercase;
     }
     
+    .primary-color {
+        color: $primary-color;
+    }
+
+    p {
+        color: $primary-text;
+    }
+
     .primary-btn {
         background: $primary-gray;
         border: 2px solid $primary-color;
@@ -51,7 +59,6 @@ body {
     }
     
     .description {
-        color: $primary-text;
         font-size: 14px;
         line-height: 20px;
         opacity: 0.8;
@@ -105,7 +112,7 @@ body {
                         transition: background-color 0.2s linear;
                         
                         @media(min-width: $md) {
-                            padding: 60px 74px 0 97px;
+                            padding: 60px 74px 20px 97px;
                         }
 
                         .logo {
@@ -115,6 +122,7 @@ body {
                             height: 14px;
                             display: inline-block;
                             background-color: $primary-text;
+                            cursor: pointer;
                         }
                     }
     
@@ -209,8 +217,7 @@ body {
 
                     &.active {
                         .navbar {
-                            background-color: transparent;
-                            transition: unset;
+                            background-color: $primary-dark;
                         }
                         .hamburger {
                             span {
@@ -292,36 +299,141 @@ body {
                         width: 100%;
                         height: 100%;
                         overflow-y: auto;
-                        padding-top: 130px;
-                        align-items: center;
+                        padding: 130px 30px 30px;
+                        
+                        @media(min-width: $md) {
+                            padding-left: 97px;
 
-                        * {
-                            text-align: center;
                         }
                         
                         h2 {
                             text-transform: uppercase;
                             margin-bottom: 40px;
+                            position: relative;
+                            width: max-content;
                         }
 
                     }
+
+                    .menu-resto {
+                        h3 {
+                            position: relative;
+                            text-transform: uppercase;
+                            display: flex;
+                            align-items: center;
+                            &:not(:nth-child(2)) {
+                                padding-top: 70px;
+                            }
+
+                            &::before {
+                                display: block;
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: $primary-text;
+                                margin-right: 10px;
+                                align-self: center;
+                            }
+                        }
+                    }
                     
-                    .contact-wrapper {
+                    .contact-container, .menu-resto-container {
+                        width: 100%;
+                        row-gap: 40px;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        
+                        @media(min-width: $sm) {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+
                         h3 {
                             margin-bottom: 10px;
                         }
                     }
 
                     .menu-resto-container {
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                        width: 100%;
-                        padding: 10px 30px;
+                        padding-top: 30px;
+                        column-gap: 20px;
+                        row-gap: 50px;
+
+                        > div {
+                            position: relative;
+                            &::after {
+                                font-size: 70px;
+                                position: absolute;
+                                top: -30px;
+                                left: -30px;
+                                z-index: -1;
+                                opacity: 0.05;
+                                color: $primary-text;
+                            }
+                            &:first-child {
+                                &::after {
+                                    content: ".01";
+                                }
+                            }
+                            &:nth-child(2) {
+                                &::after {
+                                    content: ".02";
+                                }
+                            }
+                            &:nth-child(3) {
+                                &::after {
+                                    content: ".03";
+                                }
+                            }
+                            &:nth-child(4) {
+                                &::after {
+                                    content: ".04";
+                                }
+                            }
+                            &:nth-child(5) {
+                                &::after {
+                                    content: ".05";
+                                }
+                            }
+                            &:nth-child(6) {
+                                &::after {
+                                    content: ".06";
+                                }
+                            }
+                            &:nth-child(7) {
+                                &::after {
+                                    content: ".07";
+                                }
+                            }
+                            &:nth-child(8) {
+                                &::after {
+                                    content: ".08";
+                                }
+                            }
+                            &:nth-child(9) {
+                                &::after {
+                                    content: ".09";
+                                }
+                            }
+                            &:nth-child(10) {
+                                &::after {
+                                    content: ".10";
+                                }
+                            }
+                        }
 
                         p {
                             margin: 0;
                             margin-top: 10px;
                         }
+
+                        h4 {
+                            font-family: "DIN Next Lt Bold";
+                        }
+
                     }
                 }
             }

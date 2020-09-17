@@ -14,6 +14,7 @@ function openSection(section) {
     if (section !== "hero-id") {
         document.body.style.maxHeight = "100vh";
         document.body.style.overflow = "hidden";
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
     else {
         document.body.style = "";
