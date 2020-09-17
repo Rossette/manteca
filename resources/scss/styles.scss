@@ -1,0 +1,484 @@
+@import "variables";
+@import "fonts";
+
+* {
+    font-family: "DIN Next Lt", "Open Sans", Roboto;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: $primary-gray;
+
+    // COMMON 
+    .bold {
+        font-family: "DIN Next Lt Bold";
+        text-transform: uppercase;
+    }
+    
+    .primary-color {
+        color: $primary-color;
+    }
+
+    p {
+        color: $primary-text;
+    }
+
+    .primary-btn {
+        background: $primary-gray;
+        border: 2px solid $primary-color;
+        border-radius: 30px;
+        color: $primary-color;
+        font-size: 14px;
+        padding: 10px;
+        letter-spacing: 0.2px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s linear;
+        
+        @media(min-width: $md) {
+            font-size: 16px;
+            padding: 15px 20px;
+        }
+
+        span {
+            z-index: 2;
+            position: relative;
+        }
+        &:hover {
+            color: $white;
+            background: $primary-color;
+            border: 2px solid transparent;
+        }
+    }
+    
+    .description {
+        font-size: 14px;
+        line-height: 20px;
+        opacity: 0.8;
+        margin: 0;
+        margin-bottom: 30px;
+        max-width: 478px;
+        
+        @media(min-width: $md) {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    h3, h4 {
+        margin: 0;
+    }
+
+    .wrapper {
+        position: relative;
+        @media(min-width: $lg) {
+            display: flex;
+            padding-left: 60%;
+        }
+
+        .left-section {
+            height: 100vh;
+            @media(min-width: $lg) {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 60%;
+            }
+
+            &-container {
+                height: 100%;
+                transform: translate3d(0,0,0);
+                position: relative;
+                
+                .header-wrapper {
+                    .navbar {
+                        display: flex;
+                        justify-content: space-between;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 30px;
+                        z-index: 4;
+                        background-color: $primary-gray;
+                        transition: background-color 0.2s linear;
+                        
+                        @media(min-width: $md) {
+                            padding: 60px 74px 20px 97px;
+                        }
+
+                        .logo {
+                            mask: url("../images/icons/manteca-logo.svg") center / contain no-repeat;
+                            -webkit-mask: url("../images/icons/manteca-logo.svg") center / contain no-repeat;
+                            width: 100px;
+                            height: 14px;
+                            display: inline-block;
+                            background-color: $primary-text;
+                            cursor: pointer;
+                        }
+                    }
+    
+                    .menu-wrapper {
+                        height: 100vh;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        z-index: 3;
+                        background: $primary-dark;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: all 0.2s linear;
+
+                        ul {
+                            max-height: 50%;
+                            display: grid;
+                            grid-template-rows: repeat(5, 1fr);
+                            grid-gap: 40px;
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                color: $white;
+                                font-size: 20px;
+                                cursor: pointer;
+                                position: relative;
+                                width: max-content;
+                                transition: all 0.3s linear;
+                                opacity: 0.7;
+
+                                a {
+                                    text-decoration: none;
+                                    color: inherit;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    height: 2px;
+                                    background: $white;
+                                    bottom: -10px;
+                                    left: 0;
+                                    border-radius: 5px;
+                                    transition: all 0.3s linear;
+                                }
+                                
+                                &:hover {
+                                    opacity: 1;
+                                    transform: translateX(10px);
+                                    &::after {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .hamburger {
+                        position: relative;
+                        width: 24px;
+                        row-gap: 3px;
+                        display: grid;
+                        grid-template-rows: repeat(2, 2px);
+                        cursor: pointer;
+
+                        span {
+                            height: 2px;
+                            background: $primary-text;
+                            transition: all 0.2s linear;
+                            width: 100%;
+                            border-radius: 2px;
+                            &:nth-child(1) {
+                                width: 13px;
+                            }
+                            &:nth-child(3) {
+                                width: 18px;
+                            }
+                        }
+
+                        &:hover {
+                            span {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        .navbar {
+                            background-color: $primary-dark;
+                        }
+                        .hamburger {
+                            span {
+                                background: $white;
+                                &:nth-child(1) {
+                                    width: 13px;
+                                    transform: rotate(45deg) translateX(2px);
+                                }
+                                &:nth-child(2) {
+                                    transform: rotate(-45deg);
+                                }
+                                &:nth-child(3) {
+                                    width: 13px;
+                                    transform: translate(9px, -1px) rotate(45deg);
+                                }
+                            }
+                        }
+
+                        .logo {
+                            background-color: $white;
+                        }
+
+                        .menu-wrapper {
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
+                    }
+                }
+
+
+                .home-container {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    
+                    > div {
+                        display: none;
+                        &.active {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                    
+                    .hero {
+                        padding: 0 30px 60px;
+                        
+                        @media(min-width: $md) {
+                            padding-bottom: 150px;
+                            padding-left: 97px;
+                        }
+
+                        h2 {
+                            font-size: 32px;
+                            line-height: 30px;
+                            color: $primary-text;
+                            letter-spacing: -2px;
+                            margin-bottom: 22px;
+                            max-width: 250px;
+                            
+                            @media(min-width: $md) {
+                                font-size: 56px;
+                                line-height: 50px;
+                                max-width: 478px;
+                            }
+
+                            b {
+                                color: $primary-color;
+                            }
+                        }
+                        
+                        button {
+                            max-width: 175px;
+                        }
+                    }
+
+                    .menu-resto, .contact-wrapper {
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        overflow-y: auto;
+                        padding: 130px 30px 30px;
+                        
+                        @media(min-width: $md) {
+                            padding-left: 97px;
+
+                        }
+                        
+                        h2 {
+                            text-transform: uppercase;
+                            margin-bottom: 40px;
+                            position: relative;
+                            width: max-content;
+                        }
+
+                    }
+
+                    .menu-resto {
+                        h3 {
+                            position: relative;
+                            text-transform: uppercase;
+                            display: flex;
+                            align-items: center;
+                            &:not(:nth-child(2)) {
+                                padding-top: 70px;
+                            }
+
+                            &::before {
+                                display: block;
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: $primary-text;
+                                margin-right: 10px;
+                                align-self: center;
+                            }
+                        }
+                    }
+                    
+                    .contact-container, .menu-resto-container {
+                        width: 100%;
+                        row-gap: 40px;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        
+                        @media(min-width: $sm) {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+
+                        h3 {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .menu-resto-container {
+                        padding-top: 30px;
+                        column-gap: 20px;
+                        row-gap: 50px;
+
+                        > div {
+                            position: relative;
+                            &::after {
+                                font-size: 70px;
+                                position: absolute;
+                                top: -30px;
+                                left: -30px;
+                                z-index: -1;
+                                opacity: 0.05;
+                                color: $primary-text;
+                            }
+                            &:first-child {
+                                &::after {
+                                    content: ".01";
+                                }
+                            }
+                            &:nth-child(2) {
+                                &::after {
+                                    content: ".02";
+                                }
+                            }
+                            &:nth-child(3) {
+                                &::after {
+                                    content: ".03";
+                                }
+                            }
+                            &:nth-child(4) {
+                                &::after {
+                                    content: ".04";
+                                }
+                            }
+                            &:nth-child(5) {
+                                &::after {
+                                    content: ".05";
+                                }
+                            }
+                            &:nth-child(6) {
+                                &::after {
+                                    content: ".06";
+                                }
+                            }
+                            &:nth-child(7) {
+                                &::after {
+                                    content: ".07";
+                                }
+                            }
+                            &:nth-child(8) {
+                                &::after {
+                                    content: ".08";
+                                }
+                            }
+                            &:nth-child(9) {
+                                &::after {
+                                    content: ".09";
+                                }
+                            }
+                            &:nth-child(10) {
+                                &::after {
+                                    content: ".10";
+                                }
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+                            margin-top: 10px;
+                        }
+
+                        h4 {
+                            font-family: "DIN Next Lt Bold";
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .right-section {
+            background: $primary-gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            @media(min-width: $lg) {
+                width: 40%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                min-height: 100vh;
+            }
+            .photo-container {
+                display: flex;
+                position: relative;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+                &::after{
+                    content: "";
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgb(0 0 0 / 0.4);
+                    transition: all 0.2s linear;
+                }
+                &:hover{
+                    &::after{
+                        opacity: 0;
+                    }
+                }
+                .galery-photo {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
