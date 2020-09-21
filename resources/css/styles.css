@@ -82,7 +82,7 @@ body .wrapper {
 @media (min-width: 992px) {
   body .wrapper {
     display: flex;
-    padding-left: 60%;
+    padding-left: 55%;
   }
 }
 body .wrapper .left-section {
@@ -93,7 +93,7 @@ body .wrapper .left-section {
     position: fixed;
     left: 0;
     top: 0;
-    width: 60%;
+    width: 55%;
   }
 }
 body .wrapper .left-section-container {
@@ -121,8 +121,8 @@ body .wrapper .left-section-container .header-wrapper .navbar {
 body .wrapper .left-section-container .header-wrapper .navbar .logo {
   mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
   -webkit-mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
-  width: 100px;
-  height: 14px;
+  width: 120px;
+  height: 20px;
   display: inline-block;
   background-color: #333333;
   cursor: pointer;
@@ -389,7 +389,7 @@ body .wrapper .right-section {
 }
 @media (min-width: 992px) {
   body .wrapper .right-section {
-    width: 40%;
+    width: 45%;
     position: absolute;
     right: 0;
     top: 0;
@@ -405,7 +405,6 @@ body .wrapper .right-section .photo-container:not(:last-child) {
 }
 body .wrapper .right-section .photo-container::after {
   content: "";
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -420,6 +419,14 @@ body .wrapper .right-section .photo-container:hover::after {
 body .wrapper .right-section .photo-container .galery-photo {
   width: 100%;
   height: auto;
+  object-position: center;
+  object-fit: cover;
+}
+body .wrapper .right-section .photo-container:first-child .galery-photo {
+  height: 60vh;
+}
+body .wrapper .right-section .photo-container:nth-child(2) .galery-photo {
+  height: 80vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
