@@ -11,12 +11,4 @@ function activeMenu() {
 function openSection(section) {
     document.querySelectorAll('.active').forEach(e => e.classList.remove("active"));
     document.getElementById(section).classList.add("active");
-    if (section !== "hero-id") {
-        document.body.style.maxHeight = "100vh";
-        document.body.style.overflow = "hidden";
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-    else {
-        document.body.style = "";
-    }
 }

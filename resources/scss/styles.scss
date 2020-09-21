@@ -81,7 +81,7 @@ body {
         position: relative;
         @media(min-width: $lg) {
             display: flex;
-            padding-left: 60%;
+            padding-left: 55%;
         }
 
         .left-section {
@@ -90,7 +90,7 @@ body {
                 position: fixed;
                 left: 0;
                 top: 0;
-                width: 60%;
+                width: 55%;
             }
 
             &-container {
@@ -118,8 +118,8 @@ body {
                         .logo {
                             mask: url("../images/icons/manteca-logo.svg") center / contain no-repeat;
                             -webkit-mask: url("../images/icons/manteca-logo.svg") center / contain no-repeat;
-                            width: 100px;
-                            height: 14px;
+                            width: 120px;
+                            height: 20px;
                             display: inline-block;
                             background-color: $primary-text;
                             cursor: pointer;
@@ -446,7 +446,7 @@ body {
             align-items: center;
             overflow-y: auto;
             @media(min-width: $lg) {
-                width: 40%;
+                width: 45%;
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -459,7 +459,6 @@ body {
                     margin-bottom: 5px;
                 }
                 &::after{
-                    content: "";
                     content: "";
                     position: absolute;
                     top: 0;
@@ -477,6 +476,18 @@ body {
                 .galery-photo {
                     width: 100%;
                     height: auto;
+                    object-position: center;
+                    object-fit: cover;
+                }
+                &:first-child {
+                    .galery-photo {
+                        height: 60vh;
+                    }
+                }
+                &:nth-child(2) {
+                    .galery-photo {
+                        height: 80vh;
+                    }
                 }
             }
         }
