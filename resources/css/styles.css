@@ -18,7 +18,7 @@
 body {
   padding: 0;
   margin: 0;
-  background: #F0F0F0;
+  background: #FFFFFF;
 }
 body .bold {
   font-family: "DIN Next Lt Bold";
@@ -31,7 +31,7 @@ body p {
   color: #333333;
 }
 body .primary-btn {
-  background: #F0F0F0;
+  background: #FFFFFF;
   border: 2px solid #ea6515;
   border-radius: 30px;
   color: #ea6515;
@@ -79,22 +79,8 @@ body h3, body h4 {
 body .wrapper {
   position: relative;
 }
-@media (min-width: 992px) {
-  body .wrapper {
-    display: flex;
-    padding-left: 60%;
-  }
-}
 body .wrapper .left-section {
   height: 100vh;
-}
-@media (min-width: 992px) {
-  body .wrapper .left-section {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 60%;
-  }
 }
 body .wrapper .left-section-container {
   height: 100%;
@@ -109,8 +95,8 @@ body .wrapper .left-section-container .header-wrapper .navbar {
   left: 0;
   width: 100%;
   padding: 30px;
+  background-color: #FFFFFF;
   z-index: 4;
-  background-color: #F0F0F0;
   transition: background-color 0.2s linear;
 }
 @media (min-width: 768px) {
@@ -118,32 +104,32 @@ body .wrapper .left-section-container .header-wrapper .navbar {
     padding: 60px 74px 20px 97px;
   }
 }
-body .wrapper .left-section-container .header-wrapper .navbar .logo {
-  mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
-  -webkit-mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
-  width: 100px;
-  height: 14px;
-  display: inline-block;
-  background-color: #333333;
-  cursor: pointer;
-}
 body .wrapper .left-section-container .header-wrapper .menu-wrapper {
-  height: 100vh;
   position: absolute;
+  height: 100vh;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
-  background: #1B1C1E;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
+  z-index: 3;
   pointer-events: none;
   transition: all 0.2s linear;
 }
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .header-wrapper .menu-wrapper {
+    z-index: 6;
+    height: 70vh;
+    top: 15vh;
+    left: 25%;
+    width: 50%;
+  }
+}
 body .wrapper .left-section-container .header-wrapper .menu-wrapper ul {
-  max-height: 50%;
+  max-height: 80%;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 40px;
@@ -206,10 +192,20 @@ body .wrapper .left-section-container .header-wrapper .hamburger:hover span {
   width: 100%;
 }
 body .wrapper .left-section-container .header-wrapper.active .navbar {
-  background-color: #1B1C1E;
+  background: none;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .header-wrapper.active .navbar {
+    background: #FFFFFF;
+  }
 }
 body .wrapper .left-section-container .header-wrapper.active .hamburger span {
   background: #FFFFFF;
+}
+@media (min-width: 768px) {
+  body .wrapper .left-section-container .header-wrapper.active .hamburger span {
+    background: #333333;
+  }
 }
 body .wrapper .left-section-container .header-wrapper.active .hamburger span:nth-child(1) {
   width: 13px;
@@ -243,12 +239,23 @@ body .wrapper .left-section-container .home-container > div.active {
   flex-direction: column;
 }
 body .wrapper .left-section-container .home-container .hero {
-  padding: 0 30px 60px;
+  padding: 70px 30px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px) {
   body .wrapper .left-section-container .home-container .hero {
-    padding-bottom: 150px;
-    padding-left: 97px;
+    padding: 120px 60px 30px;
+  }
+}
+body .wrapper .left-section-container .home-container .hero > img {
+  margin-bottom: 40px;
+  width: 100px;
+}
+@media (min-width: 992px) {
+  body .wrapper .left-section-container .home-container .hero > img {
+    width: 170px;
   }
 }
 body .wrapper .left-section-container .home-container .hero h2 {
@@ -271,6 +278,15 @@ body .wrapper .left-section-container .home-container .hero h2 b {
 }
 body .wrapper .left-section-container .home-container .hero button {
   max-width: 175px;
+}
+body .wrapper .left-section-container .home-container .hero .logo {
+  mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/icons/manteca-logo.svg") center/contain no-repeat;
+  width: 120px;
+  height: 20px;
+  display: inline-block;
+  background-color: #333333;
+  cursor: pointer;
 }
 body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
   display: none;
@@ -315,7 +331,12 @@ body .wrapper .left-section-container .home-container .contact-container, body .
   display: grid;
   grid-template-columns: 1fr;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) and (max-width: 992px) {
+  body .wrapper .left-section-container .home-container .contact-container, body .wrapper .left-section-container .home-container .menu-resto-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
   body .wrapper .left-section-container .home-container .contact-container, body .wrapper .left-section-container .home-container .menu-resto-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -381,15 +402,23 @@ body .wrapper .left-section-container .home-container .menu-resto-container h4 {
   font-family: "DIN Next Lt Bold";
 }
 body .wrapper .right-section {
-  background: #F0F0F0;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+}
+body .wrapper .right-section.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 @media (min-width: 992px) {
   body .wrapper .right-section {
-    width: 40%;
+    width: 45%;
     position: absolute;
     right: 0;
     top: 0;
@@ -405,7 +434,6 @@ body .wrapper .right-section .photo-container:not(:last-child) {
 }
 body .wrapper .right-section .photo-container::after {
   content: "";
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -420,6 +448,14 @@ body .wrapper .right-section .photo-container:hover::after {
 body .wrapper .right-section .photo-container .galery-photo {
   width: 100%;
   height: auto;
+  object-position: center;
+  object-fit: cover;
+}
+body .wrapper .right-section .photo-container:first-child .galery-photo {
+  height: 60vh;
+}
+body .wrapper .right-section .photo-container:nth-child(2) .galery-photo {
+  height: 80vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
