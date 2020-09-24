@@ -11,4 +11,7 @@ function activeMenu() {
 function openSection(section) {
     document.querySelectorAll('.active').forEach(e => e.classList.remove("active"));
     document.getElementById(section).classList.add("active");
+    if(section !== 'hero-id') {
+        document.getElementById('right-section-id').classList.add("active");
+    } 
 }
