@@ -80,7 +80,16 @@ body .wrapper {
   position: relative;
 }
 body .wrapper .left-section {
-  height: 100vh;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  body .wrapper .left-section {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
 }
 body .wrapper .left-section-container {
   height: 100%;
@@ -94,14 +103,22 @@ body .wrapper .left-section-container .header-wrapper .navbar {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px;
+  padding: 60px 30px 30px;
   background-color: #FFFFFF;
   z-index: 4;
   transition: background-color 0.2s linear;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   body .wrapper .left-section-container .header-wrapper .navbar {
-    padding: 60px 74px 20px 97px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper .left-section-container .header-wrapper .navbar {
+    padding: 60px 74px 20px;
+    padding-left: 97px;
+    width: 50%;
   }
 }
 body .wrapper .left-section-container .header-wrapper .menu-wrapper {
@@ -240,7 +257,7 @@ body .wrapper .left-section-container .home-container > div.active {
 }
 body .wrapper .left-section-container .home-container .hero {
   padding: 70px 30px;
-  height: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -293,11 +310,21 @@ body .wrapper .left-section-container .home-container .menu-resto, body .wrapper
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  padding: 130px 30px 30px;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
+  body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+@media (min-width: 992px) {
   body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
     padding-left: 97px;
+    width: 55%;
   }
 }
 body .wrapper .left-section-container .home-container .menu-resto h2, body .wrapper .left-section-container .home-container .contact-wrapper h2 {
@@ -331,12 +358,7 @@ body .wrapper .left-section-container .home-container .contact-container, body .
   display: grid;
   grid-template-columns: 1fr;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  body .wrapper .left-section-container .home-container .contact-container, body .wrapper .left-section-container .home-container .menu-resto-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
   body .wrapper .left-section-container .home-container .contact-container, body .wrapper .left-section-container .home-container .menu-resto-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -349,7 +371,7 @@ body .wrapper .left-section-container .home-container .contact-container h3, bod
 }
 body .wrapper .left-section-container .home-container .menu-resto-container {
   padding-top: 30px;
-  column-gap: 20px;
+  column-gap: 30px;
   row-gap: 50px;
 }
 body .wrapper .left-section-container .home-container .menu-resto-container > div {
@@ -403,17 +425,16 @@ body .wrapper .left-section-container .home-container .menu-resto-container h4 {
 }
 body .wrapper .right-section {
   background: #FFFFFF;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
-  height: 100vh;
-  z-index: 5;
+  z-index: 1;
   opacity: 0;
   pointer-events: none;
 }
 body .wrapper .right-section.active {
   opacity: 1;
+  display: flex;
   pointer-events: auto;
 }
 @media (min-width: 992px) {
@@ -422,7 +443,6 @@ body .wrapper .right-section.active {
     position: absolute;
     right: 0;
     top: 0;
-    min-height: 100vh;
   }
 }
 body .wrapper .right-section .photo-container {
@@ -431,19 +451,6 @@ body .wrapper .right-section .photo-container {
 }
 body .wrapper .right-section .photo-container:not(:last-child) {
   margin-bottom: 5px;
-}
-body .wrapper .right-section .photo-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: all 0.2s linear;
-}
-body .wrapper .right-section .photo-container:hover::after {
-  opacity: 0;
 }
 body .wrapper .right-section .photo-container .galery-photo {
   width: 100%;
