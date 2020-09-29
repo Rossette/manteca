@@ -79,6 +79,10 @@ body {
 
     .wrapper {
         position: relative;
+        &.menu-fixed {
+            height: 100vh;
+            overflow: hidden; 
+        }
         .left-section {
             width: 100%;
             @media(min-width: $lg) {

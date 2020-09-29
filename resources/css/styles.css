@@ -79,6 +79,10 @@ body h3, body h4 {
 body .wrapper {
   position: relative;
 }
+body .wrapper.menu-fixed {
+  height: 100vh;
+  overflow: hidden;
+}
 body .wrapper .left-section {
   width: 100%;
 }
