@@ -141,8 +141,13 @@ body {
                             z-index: 6;
                             height: 70vh;
                             top: 15vh;
-                            left: 25%;
-                            width: 50%;
+                            left: 30%;
+                            width: 40%;
+                        }
+                        
+                        @media(min-width: $xl) {
+                            left: 35%;
+                            width: 30%;
                         }
 
                         ul {
