@@ -467,6 +467,7 @@ body .wrapper .right-section .photo-container .galery-photo {
   height: auto;
   object-position: center;
   object-fit: cover;
+  align-self: flex-start;
 }
 body .wrapper .right-section .photo-container:first-child .galery-photo {
   height: 60vh;

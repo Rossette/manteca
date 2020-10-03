@@ -514,6 +514,7 @@ body {
                     height: auto;
                     object-position: center;
                     object-fit: cover;
+                    align-self: flex-start;
                 }
                 &:first-child {
                     .galery-photo {
