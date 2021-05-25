@@ -79,6 +79,7 @@ body {
 
     .wrapper {
         position: relative;
+
         &.menu-fixed {
             height: 100vh;
             overflow: hidden; 
@@ -185,10 +186,12 @@ body {
                                 }
                                 
                                 &:hover {
-                                    opacity: 1;
-                                    transform: translateX(10px);
-                                    &::after {
-                                        width: 100%;
+                                    @media (min-width: $lg) {
+                                        opacity: 1;
+                                        transform: translateX(10px);
+                                        &::after {
+                                            width: 100%;
+                                        }
                                     }
                                 }
                             }
@@ -260,7 +263,6 @@ body {
                         }
                     }
                 }
-
 
                 .home-container {
                     height: 100%;
