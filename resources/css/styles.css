@@ -187,12 +187,14 @@ body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li::after
   border-radius: 5px;
   transition: all 0.3s linear;
 }
-body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover {
-  opacity: 1;
-  transform: translateX(10px);
-}
-body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover::after {
-  width: 100%;
+@media (min-width: 992px) {
+  body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  body .wrapper .left-section-container .header-wrapper .menu-wrapper ul li:hover::after {
+    width: 100%;
+  }
 }
 body .wrapper .left-section-container .header-wrapper .hamburger {
   position: relative;
