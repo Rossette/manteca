@@ -417,56 +417,6 @@ body {
                                 opacity: 0.05;
                                 color: $primary-text;
                             }
-                            &:first-child {
-                                &::after {
-                                    content: ".01";
-                                }
-                            }
-                            &:nth-child(2) {
-                                &::after {
-                                    content: ".02";
-                                }
-                            }
-                            &:nth-child(3) {
-                                &::after {
-                                    content: ".03";
-                                }
-                            }
-                            &:nth-child(4) {
-                                &::after {
-                                    content: ".04";
-                                }
-                            }
-                            &:nth-child(5) {
-                                &::after {
-                                    content: ".05";
-                                }
-                            }
-                            &:nth-child(6) {
-                                &::after {
-                                    content: ".06";
-                                }
-                            }
-                            &:nth-child(7) {
-                                &::after {
-                                    content: ".07";
-                                }
-                            }
-                            &:nth-child(8) {
-                                &::after {
-                                    content: ".08";
-                                }
-                            }
-                            &:nth-child(9) {
-                                &::after {
-                                    content: ".09";
-                                }
-                            }
-                            &:nth-child(10) {
-                                &::after {
-                                    content: ".10";
-                                }
-                            }
                         }
 
                         p {
@@ -513,20 +463,10 @@ body {
                 }
                 .galery-photo {
                     width: 100%;
-                    height: auto;
                     object-position: center;
                     object-fit: cover;
                     align-self: flex-start;
-                }
-                &:first-child {
-                    .galery-photo {
-                        height: 60vh;
-                    }
-                }
-                &:nth-child(2) {
-                    .galery-photo {
-                        height: 80vh;
-                    }
+                    height: 60vh;
                 }
             }
         }
