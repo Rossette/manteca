@@ -336,7 +336,7 @@ body .wrapper .left-section-container .home-container .menu-resto, body .wrapper
 @media (min-width: 992px) {
   body .wrapper .left-section-container .home-container .menu-resto, body .wrapper .left-section-container .home-container .contact-wrapper {
     padding-left: 97px;
-    width: 55%;
+    width: 60%;
   }
 }
 body .wrapper .left-section-container .home-container .menu-resto h2, body .wrapper .left-section-container .home-container .contact-wrapper h2 {
@@ -421,7 +421,7 @@ body .wrapper .right-section.active {
 }
 @media (min-width: 992px) {
   body .wrapper .right-section {
-    width: 45%;
+    width: 40%;
     position: absolute;
     right: 0;
     top: 0;
